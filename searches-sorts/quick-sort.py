@@ -6,7 +6,6 @@ def quickSortHelper(array, first, last):
         splitPoint = partitioning(array, first, last)
         quickSortHelper(array, first, splitPoint - 1)
         quickSortHelper(array, splitPoint + 1, last)
-    # return array
 
 def partitioning(array, first, last):
     pivot = array[first]
@@ -24,17 +23,12 @@ def partitioning(array, first, last):
         if left > right:
             isFinished = True
         else:
-            array[left], array[right] = swap(array[left], array[right])
+            array[left], array[right] = array[right], array[left]
 
-    array[first], array[right] = swap(array[first], array[right])
+    array[first], array[right] = array[right], array[first]
 
     return right
 
-def swap(a, b):
-    temp = a
-    a = b
-    b = temp
-    return a, b
 
 alist = [54,26,93,17,77,31,44,55,20]
 quickSort(alist)

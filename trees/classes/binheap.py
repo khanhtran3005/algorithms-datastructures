@@ -14,16 +14,15 @@ class BinHeap():
     def percUp(self,i):
         while i // 2 > 0:
           if self.heapList[i] < self.heapList[i // 2]:
-             self.heapList[i // 2], self.heapList[i] = swap(self.heapList[i // 2], self.heapList[i])
+             self.heapList[i // 2], self.heapList[i] = self.heapList[i], self.heapList[i // 2]
 
           i = i // 2
 
     def percDown(self,i):
         while (i * 2) <= self.currentSize: # kiem tra xem con node leaf hay khong
             mc = self.minChild(i)
-            print(mc)
             if self.heapList[i] > self.heapList[mc]:
-                self.heapList[i], self.heapList[mc] = swap(self.heapList[i], self.heapList[mc])
+                self.heapList[i], self.heapList[mc] = self.heapList[mc], self.heapList[i]
             i = mc
 
     # compare left and right
@@ -49,14 +48,12 @@ class BinHeap():
         self.currentSize = len(alist)
         self.heapList = [0] + alist
         while (i > 0):
-            # print(i)
             self.percDown(i)
             i = i - 1
 
-
-def swap(a, b):
-    a = a ^ b
-    b = a ^ b
-    a = a ^ b
-
-    return a, b
+    def printTree(self):
+        from math import ceil
+        i = 1
+        while i <= ceil(self.currentSize**(1/2)):
+            print(self.heapList[2**(i-1):2**i])
+            i += 1

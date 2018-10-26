@@ -18,10 +18,10 @@ def quickSort(array, first, last):
             if left > right:
                 isFinished = True
             else:
-                array[left], array[right] = swap(array[left], array[right])
+                array[left], array[right] = array[right], array[left]
 
 
-        array[first], array[right] = swap(array[first], array[right])
+        array[first], array[right] = array[right], array[first] # swap pivot and right
 
         splitpoint = right
 
@@ -29,13 +29,6 @@ def quickSort(array, first, last):
         quickSort(array, splitpoint + 1, last)
 
     return array
-
-
-def swap(a, b):
-    temp = a
-    a = b
-    b = temp
-    return a, b
 
 array = random.randint(0, 1000, size=10).tolist()
 
