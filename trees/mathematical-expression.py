@@ -39,17 +39,7 @@ def buildParseTree(exp):
             raise ValueError
     return tree
 
-def postOrder(tree):
-    if tree:
-        postOrder(tree.getLeftChild())
-        postOrder(tree.getRightChild())
-        print(tree.getRootVal())
 
-def inOrder(tree):
-  if tree != None:
-      inOrder(tree.getLeftChild())
-      print(tree.getRootVal())
-      inOrder(tree.getRightChild())
 
 def printExp(tree):
     string = ""
@@ -64,10 +54,8 @@ def printExp(tree):
 
     return string
 
-pt = buildParseTree("( ( ( 10 + 5 ) + 2 ) * 3 )")
-postOrder(pt)
-# inOrder(pt)
-# print(printExp(pt))
-# print(evaluate(pt))
+expression = buildParseTree("( ( ( 10 + 5 ) + 2 ) * 3 )")
+print(printExp(expression))
+print(evaluate(expression))
 
 
