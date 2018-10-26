@@ -1,6 +1,15 @@
 from classes.graph import Graph
 
 def knightGraph(boardSize):
+    """Create a graph
+
+
+    Arguments:
+        boardSize {int} -- table size
+
+    Returns:
+        Graph -- graph created from provided board size
+    """
     ktGraph = Graph()
 
     for row in range(boardSize):
@@ -31,8 +40,19 @@ def legalMoves(row, col, boardSize):
 def legalCoord(row, col, boardSize):
     return row < boardSize and row >= 0 and col < boardSize and col >= 0
 
-
 def kingTour(graph, n, path, u, limit):
+    """Find moves to go through all cell in the board
+
+    Arguments:
+        graph {Gragh} -- board
+        n {int} -- to check if every node in the gragh has gone through
+        path {list} -- path to run through all nodes
+        u {Vertex} -- node to start with
+        limit {int} -- total number of node in the graph
+
+    Returns:
+        boolean -- whether the function can find all posible moves or not
+    """
     u.setColor('grey')
     path.append(u)
     if n < limit:
@@ -54,13 +74,21 @@ def kingTour(graph, n, path, u, limit):
     return done
 
 def orderByAvail(n):
+    """Sort out posible moves
+
+    using heuristic to speed up the search by prioritizing nodes with fewest moves
+
+    Arguments:
+        n {list} -- sorted moves
+    """
+
     resList = []
     for v in n.getConnections():
         if v.getColor() == 'white':
             c = 0
             for w in v.getConnections():
                 if w.getColor() == 'white':
-                    c = c + 1
+                    c += 1
             resList.append((c,v))
 
     resList.sort(key=lambda x: x[0])
