@@ -28,3 +28,7 @@ def wordbreak(string):
 
 
 print(wordbreak("likePython"))
+
+# print all possible results: 
+#   https://www.tutorialspoint.com/Word-Break-Problem
+#   http://www.zrzahid.com/word-break-problem/
