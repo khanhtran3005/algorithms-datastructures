@@ -1,4 +1,3 @@
-
 class BinaryTree():
     def __init__(self, root):
         self.key = root
@@ -13,6 +12,12 @@ class BinaryTree():
             t = BinaryTree(newNode)
             t.left = self.left
             self.left = t
+
+    def setLeftChild(self, node):
+        self.left = node
+
+    def setRightChild(self, node):
+        self.right = node
 
     # insert after specific node
     def insertRight(self, newNode):
