@@ -1,3 +1,5 @@
+from classes.binarytree import BinaryTree
+
 def postorder(tree):
     # print root node last
     if tree:
