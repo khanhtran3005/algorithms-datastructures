@@ -1,7 +1,7 @@
 def permutationsWithRepetition(string):
     chars = list(string)
     length = len(chars)
-    return permutationsWithRepetitionHelper(chars, length, ['']*length)
+    return permutationsWithRepetitionHelper(chars, length, [None]*length)
 
 def permutationsWithRepetitionHelper(chars, length, chosen, index=0, result=[]):
     if index > length - 1:
@@ -11,6 +11,7 @@ def permutationsWithRepetitionHelper(chars, length, chosen, index=0, result=[]):
             chosen[index] = chars[i]
             print(i, index, indent(index), chosen)
             permutationsWithRepetitionHelper(chars, length, chosen, index + 1, result)
+            # chosen[index] = None
 
     return result
 
