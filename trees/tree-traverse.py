@@ -28,7 +28,15 @@ tree.getLeftChild().insertLeft(0)
 tree.getLeftChild().insertLeft(7)
 tree.getRightChild().insertLeft(9)
 tree.getRightChild().insertRight(1)
-tree.getLeftChild().getLeftChild().insertRight(88)
+
+"""
+        2
+      /   \
+     1     3
+    / \   / \
+   0   7 9   1
+
+"""
 preorder(tree)
 print('-------')
 inorder(tree)
