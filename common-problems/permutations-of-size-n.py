@@ -4,14 +4,14 @@ def permutations(string, k):
     return permutationsHelper(chars, k, chosen)
 
 
-def permutationsHelper(chars, k, chosen, index=0):
-    if index == k:
+def permutationsHelper(chars, k, chosen):
+    if len(chosen) == k:
         print(toString(chosen))
 
     else:
         for i in range(len(chars)):
             chosen.append(chars.pop(i))
-            permutationsHelper(chars, k, chosen, index+1)
+            permutationsHelper(chars, k, chosen)
             chars.insert(i, chosen.pop())
 
 def toString(chars):
