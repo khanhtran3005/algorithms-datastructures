@@ -1,5 +1,6 @@
 from numpy import random
 
+
 def quickSort(array, first, last):
 
     if last > first:
@@ -20,8 +21,7 @@ def quickSort(array, first, last):
             else:
                 array[left], array[right] = array[right], array[left]
 
-
-        array[first], array[right] = array[right], array[first] # swap pivot and right
+        array[first], array[right] = array[right], array[first]  # swap pivot and right
 
         splitpoint = right
 
@@ -29,6 +29,7 @@ def quickSort(array, first, last):
         quickSort(array, splitpoint + 1, last)
 
     return array
+
 
 array = random.randint(0, 1000, size=10).tolist()
 

@@ -31,7 +31,18 @@ def recursiveBinarySearchHelper(array, first, last, item):
 
     return -1
 
-testlist = [0, 1, 2, 8, 13, 17, 19, 32, 42,]
+
+testlist = [
+    0,
+    1,
+    2,
+    8,
+    13,
+    17,
+    19,
+    32,
+    42,
+]
 
 print(recursiveBinarySearch(testlist, 3))
 print(recursiveBinarySearch(testlist, 19))

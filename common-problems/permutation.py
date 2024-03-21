@@ -4,7 +4,6 @@ def stringPermutations(string):
 
 def stringPermutationHelper(chars, chosen=[], result=[]):
 
-
     if len(chars) == 0 and toString(chosen) not in result:
         result.append(toString(chosen))
 
@@ -19,10 +18,13 @@ def stringPermutationHelper(chars, chosen=[], result=[]):
 
     return result
 
+
 def toString(chars):
-    return ''.join(chars)
+    return "".join(chars)
+
 
 def indent(n):
-    return '    '*n
+    return "    " * n
 
-print(stringPermutations('khanh'))
+
+print(stringPermutations("khanh"))

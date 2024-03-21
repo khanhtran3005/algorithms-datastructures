@@ -1,17 +1,16 @@
 from classes.binarytree import BinaryTree
 
 
-class TreeTraversal():
+class TreeTraversal:
     def __init__(self):
         self.tree = None
 
     def _toString(self, orderName, array):
-        print(orderName + ': \t', ' '.join([str(x) for x in array]))
-
+        print(orderName + ": \t", " ".join([str(x) for x in array]))
 
     def preorder(self):
         result = self._preOrderHelper(self.tree)
-        self._toString('Pre Order', result)
+        self._toString("Pre Order", result)
 
     def _preOrderHelper(self, tree, result=[]):
         if tree:
@@ -21,10 +20,9 @@ class TreeTraversal():
 
         return result
 
-
     def inorder(self):
         result = self._inorderHelper(self.tree)
-        self._toString('In Order', result)
+        self._toString("In Order", result)
 
     def _inorderHelper(self, tree, result=[]):
         if tree:
@@ -34,10 +32,9 @@ class TreeTraversal():
 
         return result
 
-
     def postorder(self):
         result = self._postorderHelper(self.tree)
-        self._toString('Post Order', result)
+        self._toString("Post Order", result)
 
     def _postorderHelper(self, tree, result=[]):
         if tree:
@@ -47,11 +44,10 @@ class TreeTraversal():
 
         return result
 
-
     def levelorder(self):
         result = self._levelorderHelper(self.tree)
 
-        self._toString('Level Order', result)
+        self._toString("Level Order", result)
 
     def _levelorderHelper(self, tree, queue=[]):
         queue.append(tree)
@@ -70,10 +66,8 @@ class TreeTraversal():
 
         return [tree.getRootVal() for tree in queue]
 
-
     def _levelorderHelperRecursive(self, queue=[], index=0):
-        """ Recursive solution
-        """
+        """Recursive solution"""
 
         if index == len(queue):
             return [node.getRootVal() for node in queue]
@@ -85,7 +79,6 @@ class TreeTraversal():
             queue.append(tree.getRightChild())
 
         return self._levelorderHelper(queue, index + 1)
-
 
 
 class Pre_In_Construction(TreeTraversal):
@@ -100,7 +93,6 @@ class Pre_In_Construction(TreeTraversal):
     def construct(self):
         self.tree = self._constructHelper(0, len(self._preorder) - 1)
 
-
     def _constructHelper(self, iStart, iEnd):
 
         if iStart > iEnd:
@@ -114,7 +106,6 @@ class Pre_In_Construction(TreeTraversal):
             return root
 
         inIndex = self._inorder.index(root.getRootVal())
-
 
         root.setLeftChild(self._constructHelper(iStart, inIndex - 1))
         root.setRightChild(self._constructHelper(inIndex + 1, iEnd))
@@ -148,6 +139,7 @@ class In_Post_Construction(TreeTraversal):
 
         return root
 
+
 class Pre_Post_Construction(TreeTraversal):
     """Construct a tree from pre & post order traversals
 
@@ -156,7 +148,6 @@ class Pre_Post_Construction(TreeTraversal):
     Extends:
         TreeTraversal
     """
-
 
     def __init__(self, preorder, postorder):
         super().__init__()
@@ -216,20 +207,22 @@ class Lev_In_Construction(TreeTraversal):
         inIndex = inorder.index(root.getRootVal())
 
         left = inorder[:inIndex]
-        right = inorder[inIndex+1:]
+        right = inorder[inIndex + 1 :]
 
-        root.setLeftChild(self._constructHelper(self._getSubList(levelorder, left), left))
-        root.setRightChild(self._constructHelper(self._getSubList(levelorder, right), right))
+        root.setLeftChild(
+            self._constructHelper(self._getSubList(levelorder, left), left)
+        )
+        root.setRightChild(
+            self._constructHelper(self._getSubList(levelorder, right), right)
+        )
 
         return root
 
 
-
-
-PREORDER    = [1,2,4,5,3,6]
-POSTORDER   = [4,5,2,6,3,1]
-INORDER     = [4,2,5,1,3,6]
-LEVELORDER  = [1,2,3,4,5,6]
+PREORDER = [1, 2, 4, 5, 3, 6]
+POSTORDER = [4, 5, 2, 6, 3, 1]
+INORDER = [4, 2, 5, 1, 3, 6]
+LEVELORDER = [1, 2, 3, 4, 5, 6]
 
 
 ########## Full Binary Tree ##########

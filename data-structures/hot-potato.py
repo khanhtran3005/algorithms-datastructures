@@ -1,5 +1,6 @@
 from classes.queue import Queue
 
+
 def hotPotato(names, num):
 
     q = Queue()
@@ -14,4 +15,5 @@ def hotPotato(names, num):
 
     return q.dequeue()
 
-print(hotPotato(["Bill","David","Susan","Jane","Kent","Brad"], 7))
+
+print(hotPotato(["Bill", "David", "Susan", "Jane", "Kent", "Brad"], 7))

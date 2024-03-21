@@ -1,6 +1,7 @@
 from .task import Task
 
-class Printer():
+
+class Printer:
     def __init__(self, ppm: int):
         self.ppm = ppm
         self.currentTask = None
@@ -8,7 +9,7 @@ class Printer():
 
     def tick(self):
         if self.currentTask != None:
-            self.remainingTime -= 1 # each second has passed
+            self.remainingTime -= 1  # each second has passed
             if self.remainingTime <= 0:
                 self.currentTask = None
 

@@ -1,4 +1,4 @@
-class TreeNode():
+class TreeNode:
     def __init__(self, key, value, left=None, right=None, parent=None):
         super(TreeNode, self).__init__()
         self.key = key
@@ -16,7 +16,6 @@ class TreeNode():
                 yield elem
 
         yield self.key, self.value
-
 
         if self.hasRightChild():
             for elem in self.right:
@@ -57,7 +56,6 @@ class TreeNode():
             self.left.parent = self
         if self.hasRightChild():
             self.right.parent = self
-
 
     def spliceOut(self):
         if self.isLeaf():

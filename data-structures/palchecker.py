@@ -1,5 +1,6 @@
 from classes.dequeue import Dequeue
 
+
 def palChecker(string: str):
     d = Dequeue()
 
@@ -20,7 +21,8 @@ def palChecker(string: str):
 
     # return True
 
+
 print(palChecker("lsdkjfskf"))
 print(palChecker("radar"))
 
-print('/'.join(['a', 'b']))
+print("/".join(["a", "b"]))

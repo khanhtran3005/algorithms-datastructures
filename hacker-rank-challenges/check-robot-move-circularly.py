@@ -1,13 +1,13 @@
 def doesCircleExist(commands):
     """
-      check whether the robot move circularly or not with given command "RRLG" and
-      R: turn right
-      L: turn left
-      G: move forward 1 step
+    check whether the robot move circularly or not with given command "RRLG" and
+    R: turn right
+    L: turn left
+    G: move forward 1 step
 
-      RRLL => YES
-      RRRG => YES
-      RLRG => NO
+    RRLL => YES
+    RRRG => YES
+    RLRG => NO
     """
     result = []
     N = 0
@@ -21,9 +21,9 @@ def doesCircleExist(commands):
         command = command * 4
 
         for i in command:
-            if i == 'R':
+            if i == "R":
                 direction = (direction + 1) % 4
-            elif i == 'L':
+            elif i == "L":
                 direction = (4 + direction - 1) % 4
             else:
                 if direction == N:
@@ -36,12 +36,11 @@ def doesCircleExist(commands):
                     x -= 1
 
         if x == 0 and y == 0:
-            result.append('YES')
+            result.append("YES")
         else:
-            result.append('NO')
+            result.append("NO")
 
     return result
 
 
-
-print(doesCircleExist(['R', 'GGGR', 'RRRRG']))
+print(doesCircleExist(["R", "GGGR", "RRRRG"]))

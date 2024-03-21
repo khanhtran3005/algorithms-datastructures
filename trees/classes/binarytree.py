@@ -1,4 +1,4 @@
-class BinaryTree():
+class BinaryTree:
     def __init__(self, root):
         self.key = root
         self.left = None
@@ -34,7 +34,7 @@ class BinaryTree():
     def getLeftChild(self):
         return self.left
 
-    def setRootVal(self,obj):
+    def setRootVal(self, obj):
         self.key = obj
 
     def getRootVal(self):
@@ -47,10 +47,18 @@ class BinaryTree():
     #     elif self.right:
     #         self.right.postorder()
 
+
 import operator
+
+
 def evaluate(tree):
 
-    opers = {'+':operator.add, '-':operator.sub, '*':operator.mul, '/':operator.truediv}
+    opers = {
+        "+": operator.add,
+        "-": operator.sub,
+        "*": operator.mul,
+        "/": operator.truediv,
+    }
 
     leftNode = tree.getLeftChild()
     rightNode = tree.getRightChild()
@@ -58,5 +66,5 @@ def evaluate(tree):
     if leftNode and rightNode:
         fn = opers[tree.getRootVal()]
         return fn(evaluate(leftNode), evaluate(rightNode))
-    else: #leaf node
+    else:  # leaf node
         return int(tree.getRootVal())

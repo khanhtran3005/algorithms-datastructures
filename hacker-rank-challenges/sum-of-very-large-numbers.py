@@ -19,10 +19,12 @@ def sumOfVeryLargeNumbers(a, b):
 
         result = str(temp) + result
 
-    if m == 1: result = '1' + result
+    if m == 1:
+        result = "1" + result
     return result
 
-print(sumOfVeryLargeNumbers('9999', '11'))
-print(sumOfVeryLargeNumbers('111', '9999'))
-print(sumOfVeryLargeNumbers('123', '11'))
-print(sumOfVeryLargeNumbers('123', '123'))
+
+print(sumOfVeryLargeNumbers("9999", "11"))
+print(sumOfVeryLargeNumbers("111", "9999"))
+print(sumOfVeryLargeNumbers("123", "11"))
+print(sumOfVeryLargeNumbers("123", "123"))

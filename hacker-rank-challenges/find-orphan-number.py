@@ -5,4 +5,5 @@ def findAnOrphanNumber(arr):
 
     return result
 
-print(findAnOrphanNumber([1,1,2,2,3]))
+
+print(findAnOrphanNumber([1, 1, 2, 2, 3]))

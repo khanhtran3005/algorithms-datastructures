@@ -1,11 +1,13 @@
 def quickSort(array):
     quickSortHelper(array, 0, len(array) - 1)
 
+
 def quickSortHelper(array, first, last):
     if first < last:
         splitPoint = partitioning(array, first, last)
         quickSortHelper(array, first, splitPoint - 1)
         quickSortHelper(array, splitPoint + 1, last)
+
 
 def partitioning(array, first, last):
     pivot = array[first]
@@ -30,6 +32,6 @@ def partitioning(array, first, last):
     return right
 
 
-alist = [54,26,93,17,77,31,44,55,20]
+alist = [54, 26, 93, 17, 77, 31, 44, 55, 20]
 quickSort(alist)
 print(alist)

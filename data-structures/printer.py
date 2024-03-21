@@ -3,6 +3,7 @@ from classes.task import Task
 from classes.queue import Queue
 import random
 
+
 def printerSimulation(numSeconds, ppm: int):
     printer = Printer(ppm)
     printQueue = Queue()
@@ -22,13 +23,17 @@ def printerSimulation(numSeconds, ppm: int):
 
     averageWaitingTime = sum(waitingTimes) / len(waitingTimes)
 
-    print("Average waiting time is {:.^14.2f} secs and {:.>5d} tasks remaining".format(averageWaitingTime, printQueue.size()))
-
+    print(
+        "Average waiting time is {:.^14.2f} secs and {:.>5d} tasks remaining".format(
+            averageWaitingTime, printQueue.size()
+        )
+    )
 
 
 def newPrintTask():
     num = random.randrange(1, 181)
     return num == 180
+
 
 for i in range(10):
     printerSimulation(3600, "adsf")

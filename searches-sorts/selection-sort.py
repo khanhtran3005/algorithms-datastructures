@@ -1,9 +1,9 @@
 def selectionSort(array):
     length = len(array)
-    for i in range(0, length-1):
+    for i in range(0, length - 1):
         minPos = i
 
-        for j in range(i+1, length):
+        for j in range(i + 1, length):
             if array[j] < array[minPos]:
                 minPos = j
 
@@ -12,5 +12,6 @@ def selectionSort(array):
 
     return array
 
-array = [3,44,38,5,47,15,36,26,27,2,46,4,19,50,48]
+
+array = [3, 44, 38, 5, 47, 15, 36, 26, 27, 2, 46, 4, 19, 50, 48]
 print(selectionSort(array))

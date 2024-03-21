@@ -9,6 +9,7 @@ def plusMinus(arr):
         else:
             zero += 1
 
-print("{:.6f}".format(positive/length))
-print("{:.6f}".format(negative/length))
-print("{:.6f}".format(zero/length))
+
+print("{:.6f}".format(positive / length))
+print("{:.6f}".format(negative / length))
+print("{:.6f}".format(zero / length))

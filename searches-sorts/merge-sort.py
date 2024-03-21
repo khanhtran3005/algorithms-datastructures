@@ -1,5 +1,6 @@
 from numpy import random
 
+
 def mergeSort(array):
     length = len(array)
     if length >= 2:
@@ -9,7 +10,6 @@ def mergeSort(array):
 
         mergeSort(leftHalf)
         mergeSort(rightHalf)
-
 
         i = j = k = 0
 
@@ -34,6 +34,6 @@ def mergeSort(array):
 
     return array
 
+
 array = random.randint(0, 1000, size=10).tolist()
 print(mergeSort(array))
-

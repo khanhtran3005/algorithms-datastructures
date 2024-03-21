@@ -1,6 +1,7 @@
 from .vertex import Vertex
 
-class Graph():
+
+class Graph:
     def __init__(self):
         self.vertices = {}
         self.numVertices = 0
@@ -38,4 +39,3 @@ class Graph():
 
     def __len__(self):
         return len(self.vertices)
-

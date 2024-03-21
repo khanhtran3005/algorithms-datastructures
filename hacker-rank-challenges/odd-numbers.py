@@ -1,9 +1,9 @@
 def oddNumbers(l, r):
     """
-        Find odd numbers between 2 given numbers
+    Find odd numbers between 2 given numbers
     """
     first = None
-    string = ''
+    string = ""
     if l & 1:
         first = 1
     else:
@@ -11,11 +11,12 @@ def oddNumbers(l, r):
 
     string += str(first)
 
-    for i in range((r-l)//2):
+    for i in range((r - l) // 2):
         first += 2
         string += "\n" + str(first)
 
     return string
+
 
 print(oddNumbers(2, 5))
 print(oddNumbers(3, 9))

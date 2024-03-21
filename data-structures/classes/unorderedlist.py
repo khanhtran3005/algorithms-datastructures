@@ -1,6 +1,7 @@
 from node import Node
 
-class UnorderedList():
+
+class UnorderedList:
     def __init__(self):
         self._head = None
         self._size = 0
@@ -28,12 +29,12 @@ class UnorderedList():
 
         while current != None:
             if current.getData() == item:
-                return index # found index
+                return index  # found index
 
             index += 1
             current = current.getNext()
 
-        return -1 # not found
+        return -1  # not found
 
     def remove(self, item):
         current = self._head
@@ -61,7 +62,7 @@ class UnorderedList():
         prev = None
 
         if pos > self.size():
-            raise IndexError('Index out of range')
+            raise IndexError("Index out of range")
 
         if pos == 0:
             self._head = node
@@ -85,27 +86,24 @@ class UnorderedList():
         self.decreaseSize()
         return current
 
-
-
     def __str__(self):
         current = self._head
         array = []
         while current != None:
             array.append(current.getData())
             current = current.getNext()
-        string = '-'.join(str(x) for x in array)
+        string = "-".join(str(x) for x in array)
         return string
 
     def __getitem__(self, key):
         if key > self.size():
-            raise IndexError('Index out of range')
+            raise IndexError("Index out of range")
 
         current = self._head
         for i in range(key):
             current = current.getNext()
 
         return current
-
 
 
 mylist = UnorderedList()

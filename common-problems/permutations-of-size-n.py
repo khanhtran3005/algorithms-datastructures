@@ -1,6 +1,6 @@
 def permutations(string, k):
     chars = list(string)
-    chosen = ['']*len(string)
+    chosen = [""] * len(string)
     return permutationsHelper(chars, k, chosen)
 
 
@@ -14,7 +14,9 @@ def permutationsHelper(chars, k, chosen):
             permutationsHelper(chars, k, chosen)
             chars.insert(i, chosen.pop())
 
-def toString(chars):
-    return ''.join(chars)
 
-permutations('ABCD', 2)
+def toString(chars):
+    return "".join(chars)
+
+
+permutations("ABCD", 2)

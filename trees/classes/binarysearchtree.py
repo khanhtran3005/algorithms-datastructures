@@ -1,6 +1,7 @@
 from .treenode import TreeNode
 
-class BinarySearchTree():
+
+class BinarySearchTree:
     def __init__(self):
         self.root = None
         self.size = 0
@@ -21,9 +22,9 @@ class BinarySearchTree():
         return self.get(key)
 
     def __contains__(self, key):
-        return bool(self._get(key,self.root))
+        return bool(self._get(key, self.root))
 
-    def __delitem__(self,key):
+    def __delitem__(self, key):
         self.delete(key)
 
     def put(self, key, value):
@@ -48,12 +49,14 @@ class BinarySearchTree():
                 currentNode.right = TreeNode(key, value, parent=currentNode)
 
     def get(self, key):
-        if not self.root: return None
+        if not self.root:
+            return None
 
         return self._get(key, self.root)
 
     def _get(self, key, currentNode):
-        if not currentNode: return None
+        if not currentNode:
+            return None
 
         if currentNode.key == key:
             return currentNode
@@ -64,7 +67,7 @@ class BinarySearchTree():
 
     def delete(self, key):
         if self.size == 0:
-            raise KeyError('Error, key not in tree')
+            raise KeyError("Error, key not in tree")
         elif self.size == 1 and self.root.key == key:
             self.root = None
         else:
@@ -91,9 +94,15 @@ class BinarySearchTree():
             elif currentNode.isRightChild():
                 currentNode.left.parent = currentNode.parent
                 currentNode.parent.right = currentNode.left
-            else: # root case
+            else:  # root case
                 leftChild = currentNode.left
-                currentNode.replaceNodeData(leftChild.key, leftChild.value, leftChild.left, leftChild.right, leftChild.parent)
+                currentNode.replaceNodeData(
+                    leftChild.key,
+                    leftChild.value,
+                    leftChild.left,
+                    leftChild.right,
+                    leftChild.parent,
+                )
         else:
             if currentNode.isLeftChild():
                 currentNode.parent.left = currentNode.right
@@ -103,7 +112,13 @@ class BinarySearchTree():
                 currentNode.right.parent = currentNode.parent
             else:
                 rightChild = currentNode.right
-                currentNode.replaceNodeData(rightChild.key, rightChild.value, rightChild.left, rightChild.right, rightChild.parent)
+                currentNode.replaceNodeData(
+                    rightChild.key,
+                    rightChild.value,
+                    rightChild.left,
+                    rightChild.right,
+                    rightChild.parent,
+                )
 
     def deleteHasBothChildren(self, currentNode):
         successor = self.findMin(currentNode)
@@ -111,13 +126,8 @@ class BinarySearchTree():
         currentNode.key = successor.key
         currentNode.value = successor.value
 
-
     def findMin(self, currentNode):
         if not currentNode.left:
             return currentNode
 
         return self.findMin(currentNode.left)
-
-
-
-

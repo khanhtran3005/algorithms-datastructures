@@ -1,8 +1,9 @@
 from math import log, ceil
 
-class BinaryTree():
 
-    def __init__(self, value:int=None):
+class BinaryTree:
+
+    def __init__(self, value: int = None):
         """Binary tree's constructor
 
         Keyword Arguments:
@@ -12,7 +13,7 @@ class BinaryTree():
         self.left = None
         self.right = None
 
-    def insertLeft(self, newNode:int=None):
+    def insertLeft(self, newNode: int = None):
         """Insert new node to the left
 
         Arguments:
@@ -25,10 +26,10 @@ class BinaryTree():
             to the right of current node and right child
             """
             t = BinaryTree(newNode)
-            t.left = self.left # new node holds parent's left child
-            self.left = t # set parent's left child to new node
+            t.left = self.left  # new node holds parent's left child
+            self.left = t  # set parent's left child to new node
 
-    def insertRight(self, newNode:int=None):
+    def insertRight(self, newNode: int = None):
         """Insert new node to the right
 
         Arguments:
@@ -68,7 +69,7 @@ class BinaryTree():
         """
         return self.value
 
-    def setValue(self, value:int):
+    def setValue(self, value: int):
         """set node's value
 
         Arguments:
@@ -77,15 +78,13 @@ class BinaryTree():
         self.value = value
 
     def print(self):
-        """Visualize the tree
-
-        """
+        """Visualize the tree"""
         nodes = [0] + BinaryTree.BFS(self)
         depth = ceil(log(len(nodes), 2))
 
         for i in range(depth):
-            nodesSameDepth = nodes[2**i: 2**(i+1)]
-            string = ', '.join('({:d})'.format(node) for node in nodesSameDepth)
+            nodesSameDepth = nodes[2**i : 2 ** (i + 1)]
+            string = ", ".join("({:d})".format(node) for node in nodesSameDepth)
 
             print(string)
 
@@ -111,6 +110,7 @@ class BinaryTree():
                 queue.append(node.getRightChild())
 
         return result
+
 
 tree = BinaryTree(2)
 tree.insertLeft(1)

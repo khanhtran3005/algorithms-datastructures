@@ -12,4 +12,5 @@ def birthdayCakeCandles(arr):
 
     print(count)
 
-birthdayCakeCandles([3,2,1,3])
+
+birthdayCakeCandles([3, 2, 1, 3])

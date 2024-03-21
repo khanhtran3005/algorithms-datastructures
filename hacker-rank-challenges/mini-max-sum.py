@@ -14,4 +14,5 @@ def miniMaxSum(arr):
 
     print(min, max)
 
-miniMaxSum([1,2,3,4,5])
+
+miniMaxSum([1, 2, 3, 4, 5])

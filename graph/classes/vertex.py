@@ -1,14 +1,14 @@
-class Vertex():
+class Vertex:
     def __init__(self, key):
         self.id = key
         self.connectedTo = {}
-        self.color = 'white'
+        self.color = "white"
 
     def addNeighbor(self, nbr, weight=0):
         self.connectedTo[nbr] = weight
 
     def __str__(self):
-        return str(self.id) + ' connected to: ' + str([x for x in self.connectedTo])
+        return str(self.id) + " connected to: " + str([x for x in self.connectedTo])
 
     def getConnections(self):
         return self.connectedTo.keys()

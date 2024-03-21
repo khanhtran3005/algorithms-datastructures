@@ -1,5 +1,6 @@
 from classes.stack import Stack
 
+
 def numberToBinary(number):
     s = []
     string = ""
@@ -13,6 +14,7 @@ def numberToBinary(number):
         string += str(s.pop())
 
     return string
+
 
 # print(numberToBinary(4567))
 # print(numberToBinary(12345))
@@ -34,13 +36,15 @@ def baseConverter(number, base):
 
     return string
 
+
 # print(baseConverter(200,2))
 # print(baseConverter(233,16))
 # print(baseConverter(233,8))
 
+
 def recursiveBaseConverter(number, base):
     DIGITS = "0123456789ABCDEF"
-    if number < base :
+    if number < base:
         return DIGITS[number]
     else:
         mod = number % base
@@ -48,8 +52,8 @@ def recursiveBaseConverter(number, base):
         number = number // base
         return recursiveBaseConverter(number, base) + digit
 
-# print(recursiveBaseConverter(1453,16))
 
+# print(recursiveBaseConverter(1453,16))
 
 
 def basetoNumber(string, base=2):
@@ -66,4 +70,5 @@ def baseToNumberHelper(arr, base):
     else:
         return baseToNumberHelper(arr, base) * base + num
 
-print(basetoNumber('1111111111'))
+
+print(basetoNumber("1111111111"))

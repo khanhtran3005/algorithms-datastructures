@@ -1,5 +1,6 @@
 from classes.binarytree import BinaryTree
 
+
 def postorder(tree):
     # print root node last
     if tree:
@@ -7,12 +8,14 @@ def postorder(tree):
         postorder(tree.getRightChild())
         print(tree.getRootVal())
 
+
 def inorder(tree):
     # print nodes in ascending order
-  if tree:
-      inorder(tree.getLeftChild())
-      print(tree.getRootVal())
-      inorder(tree.getRightChild())
+    if tree:
+        inorder(tree.getLeftChild())
+        print(tree.getRootVal())
+        inorder(tree.getRightChild())
+
 
 def preorder(tree):
     # print root node first
@@ -20,6 +23,7 @@ def preorder(tree):
         print(tree.getRootVal())
         preorder(tree.getLeftChild())
         preorder(tree.getRightChild())
+
 
 tree = BinaryTree(2)
 tree.insertLeft(1)
@@ -38,7 +42,7 @@ tree.getRightChild().insertRight(1)
 
 """
 preorder(tree)
-print('-------')
+print("-------")
 inorder(tree)
-print('-------')
+print("-------")
 postorder(tree)

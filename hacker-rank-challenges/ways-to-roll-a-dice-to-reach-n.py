@@ -1,4 +1,4 @@
-def totalSolutions(n:int):
+def totalSolutions(n: int):
     """Caculate how many ways of rolling a six-sided dice to reach n
 
     Arguments:
@@ -18,7 +18,7 @@ def totalSolutions(n:int):
 
     """
 
-    memo = [0]*6
+    memo = [0] * 6
     memo[5] = 1
     if n == 1:
         return 1
@@ -29,5 +29,6 @@ def totalSolutions(n:int):
         memo.append(solutions)
 
     return memo.pop()
+
 
 print(totalSolutions(610))

@@ -1,6 +1,7 @@
 import random
 
-class Task():
+
+class Task:
     def __init__(self, timestamp: int):
         self.timestamp = timestamp
         self.pages = random.randrange(1, 21)

@@ -4,8 +4,10 @@ def atm(coins, withdraw):
     for coin, amount in coins.items():
         coin = int(coin)
 
-        if withdraw == 0: break
-        if withdraw < coin: continue
+        if withdraw == 0:
+            break
+        if withdraw < coin:
+            continue
 
         coinsNeeded = withdraw // coin
 
@@ -18,14 +20,11 @@ def atm(coins, withdraw):
             withdraw = withdraw - coin * amount
 
     if withdraw > 0:
-        print('Not enough money!')
+        print("Not enough money!")
     else:
         print(coinUsed)
 
 
-coins = {
-    '100' : 8,
-    '20' : 200
-}
+coins = {"100": 8, "20": 200}
 
 atm(coins, 1020)
