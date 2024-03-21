@@ -20,9 +20,9 @@ def combinationHelper(chars, k, data, start, end, index):
 			i += 1
 
 def toString(chars):
-    return ''.join(chars)
+	return ''.join(chars)
 
 def indent(n):
-    return '    '*n
+	return '    '*n
 
 combination(['a', 'b', 'c', 'd'], 3)

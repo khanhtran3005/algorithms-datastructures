@@ -20,7 +20,7 @@ def parlindrome_2(string):
 		right -= 1
 
 	return True
-	
+
 print(parlindrome_2('rottor'))
 print(parlindrome('motor'))
 print(parlindrome('rotor'))
